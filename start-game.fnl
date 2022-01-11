@@ -3,6 +3,7 @@
 (local bullets (require :game.bullets))
 (local player (require :game.player))
 (local timer (require :game.timer))
+(local repl (require :lib.stdio))
 (fn pp [x] (print (fennel.view x)))
 
 (fn get-window-size [] [(love.graphics.getWidth) (love.graphics.getHeight)])
@@ -18,6 +19,7 @@
   (invaders.init)
   (player.init)
   (bullets.init)
+  (repl.start)
   (print "loaded!"))
 
 (fn love.draw []
