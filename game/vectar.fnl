@@ -3,6 +3,14 @@
         [x1 y1] v2]
      [(+ x x1) (+ y y1)]))
 
+(comment
+
+ (add [1 0] [0 1])
+ ;; =>
+ [1 1]
+
+ )
+
 (fn dist [v1 v2]
   (let [[x1 y1] v1
         [x2 y2] v2]
@@ -10,6 +18,14 @@
     (+
      (math.pow (- x2 x1) 2)
      (math.pow (- y2 y1) 2)))))
+
+(comment
+
+ (dist [0 3] [4 0])
+ ;; =>
+ 5
+
+ )
 
 (fn jiggle [amt vertices] 
   (icollect [i n (ipairs vertices)]
@@ -35,6 +51,14 @@
                 (table.insert nums x)
                 (table.insert nums y)
                 nums)))
+
+(comment
+
+ (flatten [[0 1] [2 0] [3 3]])
+ ;; =>
+ [0 1 2 0 3 3]
+
+ )
 
 {: jiggle
  : jiggle!
